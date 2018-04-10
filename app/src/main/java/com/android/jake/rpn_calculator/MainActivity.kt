@@ -94,8 +94,10 @@ class MainActivity : AppCompatActivity() {
             printStack()
         }
         buttonDot.setOnClickListener{
-            currentNumber+="."
-            updateTextView()
+            if(!currentNumber.contains('.')){
+                currentNumber+="."
+                updateTextView()
+            }
         }
         buttonClear.setOnClickListener{
             if(currentNumber.length>1)
